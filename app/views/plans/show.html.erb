@@ -1,0 +1,37 @@
+<%= render "shared/partial" %>
+
+<div>
+  <%= link_to "← 一覧に戻る", :plans %>
+</div>
+
+<h2 class="inline-block">
+  <%= @plan.title %>
+</h2>
+
+
+<table>
+  <tr>
+    <th>開始日</th>
+    <td><%= @plan.start_date %></td>
+  </tr>
+  <tr>
+    <th>終了日</th>
+    <td><%= @plan.end_date %></td>
+  </tr>
+  <tr>
+    <th>終日</th>
+    <td><%= @plan.all_day ? '○' : '' %></td>
+  </tr>
+  <tr>
+    <th>スケジュールメモ</th>
+    <td><%= @plan.memo %></td>
+  </tr>
+</table>
+
+<button class="inline-block">
+  <%= link_to "編集", edit_plan_path(@plan) %>
+</button>
+
+<p class="show-left">本日の日付 <%= get_today_date %> </p>
+
+
